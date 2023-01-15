@@ -1,5 +1,5 @@
 {% load static wagtailcore_tags wagtailuserbar %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,6 +27,7 @@
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+        <link rel="icon" type="image/x-icon" src="{% static 'images/csnl-favicon.png' %}">
     </head>
 
     <body class="{% block body_class %}{% endblock %}">

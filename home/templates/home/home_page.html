@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load wagtailcore_tags %}
 
 {% block body_class %}home_page{% endblock %}
@@ -25,22 +25,20 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
   
           <h2 class="fw-normal">{{ page.headingoneheading }}</h2>
           <p>{{ page.headingonetext }}</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
           <h2 class="fw-normal">{{ page.headingtwoheading }}</h2>
           <p>{{ page.headingtwotext }}</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-  
+          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
           <h2 class="fw-normal">{{ page.headingthreeheading }}</h2>
           <p>{{ page.headingthreetext }}</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
@@ -51,7 +49,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Main text of page <span class="text-muted">With some lighter text</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1">{{ page.bodyheading}} <span class="text-muted">With some lighter text</span></h2>
         <p class="lead">{{ page.bodytext|richtext }}</p>
       </div>
       <div class="col-md-5">
