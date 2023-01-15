@@ -25,7 +25,7 @@ class HomePage(Page):
 
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
-        index.SearchField('body'),
+        index.SearchField('bodytext'),
     ]
 
     content_panels = Page.content_panels + [
@@ -38,22 +38,7 @@ class HomePage(Page):
         FieldPanel('headingtwoheading'),
         FieldPanel('headingtwotext'),
         FieldPanel('headingthreeheading'),
-        FieldPanel('headingthreetext'),
-        
-        InlinePanel('gallery_images', label="Gallery images"),
-        
-    ]
-
-class PagePageGalleryImage(Orderable):
-    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='gallery_images')
-    image = models.ForeignKey(
-        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
-    )
-    caption = models.CharField(blank=True, max_length=250)
-
-    panels = [
-        FieldPanel('image'),
-        FieldPanel('caption'),
+        FieldPanel('headingthreetext'),    
     ]
 
 class ContentPage(Page):
@@ -66,4 +51,18 @@ class ContentPage(Page):
         FieldPanel('body'),
         FieldPanel('hero'),
         FieldPanel('intro'),
+        InlinePanel('gallery_images', label="Gallery images"),
+    ]
+    
+
+class GalleryImage(Orderable):
+    page = ParentalKey(ContentPage, on_delete=models.CASCADE, related_name='gallery_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('caption'),
     ]
