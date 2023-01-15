@@ -22,8 +22,8 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}">
-
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
@@ -31,11 +31,54 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-
+    <!--Navbar-->
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img class="bi me-2" width="200"  role="img" src="{% static 'images/hero.png' %}">
+                
+              </a>
+        
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Projecten</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Organisaties</a></li>
+              </ul>
+        
+              <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">contact</button>
+                <button type="button" class="btn btn-primary">EU Citizen Science</button>
+              </div>
+            </header>
+          </div>
+    <!--The site content will be loaded in here-->
+      <div class="container">
         {% block content %}{% endblock %}
+      </div>
+    <!--Footer-->
+        <div class="container">
+            
+          
+          <div class="b-example-divider"></div>
+          
+          <div class="container">
+            <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Projecten</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Organisaties</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+              </ul>
+              <p class="text-center text-muted">&copy; 2023 Citizen Science Nederland</p>
+            </footer>
+          </div>
+          
+          </div>
+          
+          <div class="b-example-divider"></div>
 
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/demo.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
