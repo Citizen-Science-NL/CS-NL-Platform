@@ -13,7 +13,14 @@ from wagtail.search import index
 class HomePage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    bodyheading = models.CharField(max_length=250)
+    bodytext = RichTextField(blank=True)
+    headingoneheading = models.CharField(max_length=250)
+    headingonetext = models.CharField(max_length=250)
+    headingtwoheading = models.CharField(max_length=250)
+    headingtwotext = models.CharField(max_length=250)
+    headingthreeheading = models.CharField(max_length=250)
+    headingthreetext = models.CharField(max_length=250)
 
 
     search_fields = Page.search_fields + [
@@ -24,8 +31,17 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('intro'),
-        FieldPanel('body'),
+        FieldPanel('bodyheading'),
+        FieldPanel('bodytext'),
+        FieldPanel('headingoneheading'),
+        FieldPanel('headingonetext'),
+        FieldPanel('headingtwoheading'),
+        FieldPanel('headingtwotext'),
+        FieldPanel('headingthreeheading'),
+        FieldPanel('headingthreetext'),
+        
         InlinePanel('gallery_images', label="Gallery images"),
+        
     ]
 
 class PagePageGalleryImage(Orderable):
