@@ -40,7 +40,7 @@ jobs:
         - name: Check folders
           run: ls
         - name: 🐳 Create a Docker Container for NGINX
-          run: docker build -t nginx:latest -f Infrastructure/nginx/ .
+          run: docker build -t nginx:latest -f Infrastructure/nginx/Dockerfile .
         - name: 📬 Upload NGINX image to AWS container register
           run: |
             service_name=${{ env.AWS_LIGHTSAIL_SERVICE_NAME }}
