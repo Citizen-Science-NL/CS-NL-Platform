@@ -3,4 +3,5 @@ wagtail>=4.1,<4.2
 mysqlclient
 environ
 django-environ
-gunicorn
+gunicorn==20.1.0
+setuptools==65.5.1
