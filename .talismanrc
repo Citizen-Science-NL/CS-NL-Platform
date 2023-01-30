@@ -1,12 +1,14 @@
 fileignoreconfig:
 - filename: .github/workflows/CI.yml
 checksum: f6795f338d988f8e6c2c65289b30cfab70eb0715893bf2b70f4a4c3b961d2c45
+version: ""
 - filename: .github/workflows/Deploy.yml
 checksum: 6de4c95ae7d6bfbbb95c54012516eb46fec1e39db3d193fa168e6790a1a379b7
 version: ""
 - filename: Infrastructure/nginx/default.conf
 checksum: 45be7d29c9501ab2f37473af7c25b1ced4491bd17b707fc66be95d3a85a582f0
 version: ""
+
 
 
 
