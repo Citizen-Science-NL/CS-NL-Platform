@@ -1,6 +1,8 @@
 fileignoreconfig:
 - filename: .github/workflows/CI.yml
-  checksum: 930ff2a8c4d774386a8d0b967f5364d605abfcfb963f3a2654006607888f0b6e
+checksum: f6795f338d988f8e6c2c65289b30cfab70eb0715893bf2b70f4a4c3b961d2c45
+- filename: .github/workflows/Deploy.yml
+checksum: f61fe42c6ac81ac58bf4b35a007c0410e3129db83b3ea3dac06b92e1ec94c86f
 version: ""
 
 scopeconfig:
