@@ -47,7 +47,6 @@ jobs:
         sudo apt-get install -y binutils libproj-dev gdal-bin
     - name: Running the actual tests
       run: |
-        cd src
         python3 manage.py test --noinput
  
   linter: 
