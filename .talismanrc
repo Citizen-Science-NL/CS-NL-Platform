@@ -1,0 +1,18 @@
+fileignoreconfig:
+- filename: .github/workflows/CI.yml
+  checksum: 930ff2a8c4d774386a8d0b967f5364d605abfcfb963f3a2654006607888f0b6e
+version: ""
+
+scopeconfig:
+  - scope: yml
+
+custom_severities:
+- detector: Base64Content
+  severity: medium
+- detector: HexContent
+  severity: medium
+
+allowed_patterns:
+- keyword
+- aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+- aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}    
