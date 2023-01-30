@@ -1,0 +1,25 @@
+fileignoreconfig:
+- filename: .github/workflows/CI.yml
+checksum: f6795f338d988f8e6c2c65289b30cfab70eb0715893bf2b70f4a4c3b961d2c45
+- filename: .github/workflows/Deploy.yml
+checksum: f61fe42c6ac81ac58bf4b35a007c0410e3129db83b3ea3dac06b92e1ec94c86f
+version: ""
+- filename: Infrastructure/nginx/default.conf
+checksum: 45be7d29c9501ab2f37473af7c25b1ced4491bd17b707fc66be95d3a85a582f0
+version: ""
+
+
+
+scopeconfig:
+  - scope: yml
+
+custom_severities:
+- detector: Base64Content
+  severity: medium
+- detector: HexContent
+  severity: medium
+
+allowed_patterns:
+- keyword
+- aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+- aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}    

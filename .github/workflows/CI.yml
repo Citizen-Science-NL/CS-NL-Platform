@@ -38,7 +38,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Getting the env variables for the app
-      run: aws s3 cp s3://env-variables-citizen-science-nl/env ./
+      run: aws s3 cp s3://env-variables-citizen-science-nl/.env .
     - name: Installing dependancies
       run: |
         sudo pip3 install --upgrade pip
@@ -47,7 +47,7 @@ jobs:
         sudo apt-get install -y binutils libproj-dev gdal-bin
     - name: Running the actual tests
       run: |
-        cd src
+        ls
         python3 manage.py test --noinput
  
   linter: 
@@ -96,4 +96,4 @@ jobs:
           pr_title: "Pulling ${{ github.ref }} into master"
           pr_body: "🎉All Checks passed, so the CI opened this pull request. Check out the changes here: "
           pr_label: "automatic-pullrequest"
-          github_token: ${{ secrets.PETERVANDOORN_GH_TOKEN }} 
+          github_token: ${{ secrets.GH_TOKEN }} 
