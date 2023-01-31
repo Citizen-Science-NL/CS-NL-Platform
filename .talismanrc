@@ -11,6 +11,9 @@ version: ""
 - filename: CSNL/settings/dev.py
 checksum: eb8905da6835189531ee6eca8a829f650a8acabc5da51f4fca6372a08e0b81c0
 version: ""
+- filename: home/templates/home/home_page.html
+checksum: 2aecbe3f1a7f3b22a88405ceff4d131e4977f0ce8393cc66a40c0d382926e00a
+version: ""
 
 
 
