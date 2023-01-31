@@ -66,3 +66,15 @@ class GalleryImage(Orderable):
         FieldPanel('image'),
         FieldPanel('caption'),
     ]
+
+class ContactPage(Page):
+    body = RichTextField(blank=True)
+    hero = RichTextField(blank=True)
+    intro = models.CharField(max_length=250)
+    
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body'),
+        FieldPanel('hero'),
+        FieldPanel('intro'),
+    ]
