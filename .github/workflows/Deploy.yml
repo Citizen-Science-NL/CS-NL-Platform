@@ -54,6 +54,15 @@ jobs:
       steps:
         - name: 🗂  Getting code from Github
           uses: actions/checkout@v2
+        - name: 🤐 Make envfile
+          uses: SpicyPizza/create-envfile@v1.3
+          with:
+            envkey_DATABASEHOST: ${{ secrets.ENVKEY_DATABASEHOST }}
+            envkey_DATABASENAME: ${{ secrets.ENVKEY_DATABASENAME }}
+            envkey_DATABASEPASSWORD: ${{ secrets.ENVKEY_DATABASEPASSWORD }}
+            envkey_DATABASEUSER: ${{ secrets.ENVKEY_DATABASEUSER }}
+            file_name: .env
+            fail_on_empty: false
         - name: ⚙️  Updating to the latest versions
           run: |
             sudo apt-get update
@@ -73,8 +82,6 @@ jobs:
             aws-region: ${{ env.AWS_REGION }}
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        - name: Getting the env variables for the app
-          run: aws s3 cp s3://env-variables-citizen-science-nl/.env .
         - name: 🐳 Create a Docker Container for DJANGO
           run: docker build -t csnl:latest .
         - name: 📬 Upload Backend image to AWS container register
