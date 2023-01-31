@@ -61,6 +61,7 @@ jobs:
             envkey_DATABASENAME: ${{ secrets.ENVKEY_DATABASENAME }}
             envkey_DATABASEPASSWORD: ${{ secrets.ENVKEY_DATABASEPASSWORD }}
             envkey_DATABASEUSER: ${{ secrets.ENVKEY_DATABASEUSER }}
+            envkey_SECRETKEY: ${{ secrets.ENVKEY_DJANGO_SECRET }}
             file_name: .env
             fail_on_empty: false
         - name: ⚙️  Updating to the latest versions
