@@ -27,7 +27,8 @@
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-        <link rel="icon" type="image/x-icon" src="{% static 'images/CSNL-favicon.png' %}">
+        <link rel="shortcut icon" type="image/x-icon" src="{% static 'images/favicon.ico' %}">
+
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -63,8 +64,8 @@
           
           <div class="b-example-divider"></div>
           
-          <div class="container  bg-dark text-white">
-            <footer class="py-3 my-4 bg-dark text-white">
+          <div class="container">
+            <footer class="py-3 my-4">
               <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
                 <li class="nav-item"><a href="/projects" class="nav-link px-2 text-muted">Projecten</a></li>
