@@ -1,15 +1,15 @@
 fileignoreconfig:
 - filename: .github/workflows/CI.yml
-checksum: 970e3d865a30fe44a61a3df3588a6e986bd13cf5199cdbfdb95b313b399886d0
+checksum: 5bcd630f5bdcdcebbb5d009c26d4abb49f7c91b709080c87cf4650581764335d
 version: ""
 - filename: .github/workflows/Deploy.yml
-checksum: 2eceded2712b21f4e712d4d79c4f575909ddacc7de5a9de0477773f38d327894
+checksum: dfb677f3a71a48ef9219486c4dafdccf29fe3c31ac965ed79d6149363dc5f5af
 version: ""
 - filename: Infrastructure/nginx/default.conf
 checksum: 45be7d29c9501ab2f37473af7c25b1ced4491bd17b707fc66be95d3a85a582f0
 version: ""
 - filename: CSNL/settings/dev.py
-checksum: eb8905da6835189531ee6eca8a829f650a8acabc5da51f4fca6372a08e0b81c0
+checksum: a811a013a81a331a126663b4302c67df9fc2c6585af367154cff32707a62ac8e
 version: ""
 
 
