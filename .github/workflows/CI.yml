@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: 🗂  Getting code from Github
       uses: actions/checkout@v2
-    - name: Make envfile
+    - name: 🤐 Make envfile
       uses: SpicyPizza/create-envfile@v1.3
       with:
         envkey_DATABASEHOST: ${{ secrets.ENVKEY_DATABASEHOST }}
@@ -31,21 +31,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y jq unzip
-    - name: 🏢 Install Amazon Client
-      run: |
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip awscliv2.zip
-        sudo ./aws/install || true
-        aws --version
-        curl "https://s3.us-west-2.amazonaws.com/lightsailctl/latest/linux-amd64/lightsailctl" -o "lightsailctl"
-        sudo mv "lightsailctl" "/usr/local/bin/lightsailctl"
-        sudo chmod +x /usr/local/bin/lightsailctl
-    - name: 🤐 Log in to AWS Lightsail with Secrets
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: ${{ env.AWS_REGION }}
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Installing dependancies
       run: |
         sudo pip3 install --upgrade pip
