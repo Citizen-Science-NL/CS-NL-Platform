@@ -5,7 +5,6 @@
 FROM nginx:1.19.0-alpine
 
 COPY static ./static
-COPY static static
 COPY CSNL/static ./static
 COPY Infrastructure/nginx/default.conf ./etc/nginx/conf.d/default.conf
 
