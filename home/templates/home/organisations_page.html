@@ -18,13 +18,13 @@
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            {% for result in page.get_projects %}
+            {% for result in page.get_organisations %}
               <div class="col">
                 <div class="card shadow-sm">
-                  <img class="card-img-top" src="{{result.image1}}" alt="Card image cap">
+                  <img class="card-img-top" src="{{result.logo}}" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{result.name}}</h5>
-                    <p class="card-text">{{result.aim}}</p>
+                    <p class="card-text">{{result.description}}</p>
                     <a href="{{result.url}}" class="btn btn-primary">Visit {{result.name}}</a>
                     <div class="d-flex justify-content-between align-items-center">
                       
