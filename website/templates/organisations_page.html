@@ -4,16 +4,17 @@
 {% block body_class %}home_page{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    
+{% for item in organisation_page %}
+  <h1>{{ item.title }}</h1>
+  <p> {{ item.body}} </p>
 
-TEXT BODY
+{% endfor%}
 
     <div class="album py-5 bg-light">
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            {% for result in page.get_organisations %}
+            {% for result in organisationlist %}
               <div class="col">
                 <div class="card shadow-sm h-100">
                   <img class="card-img-top" src="{{result.logo}}" alt="Card image cap">

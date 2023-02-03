@@ -4,14 +4,18 @@
 {% block body_class %}home_page{% endblock %}
 
 {% block content %}
-    <h1>TITLE</h1>
-    TEXT BODY
+{% for item in project_page %}
+
+    <h1>{{item.title}}</h1>
+    <p> {{ item.body}} </p>
+
+{% endfor%}
 
     <div class="album py-5 bg-light">
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            {% for result in page.get_projects %}
+            {% for result in projectlist %}
               <div class="col">
                 <div class="card shadow-sm h-100">
                   <img class="card-img-top" src="{{result.image1}}" alt="Card image cap">
