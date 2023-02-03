@@ -71,9 +71,9 @@ jobs:
     name: 🕵🏼‍♀️ Scanning for sensitive data in code
     runs-on: ubuntu-18.04
     steps:
-   # - uses: actions/checkout@v2
-   #   with:
-    #    fetch-depth: 0
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     #- name: Detect secrets with Talisman in incoming commits
     #  uses: carhartl/talisman-secrets-scan-action@v1.2.1
   pull-request:
