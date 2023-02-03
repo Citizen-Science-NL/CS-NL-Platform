@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<section class="py-5 text-center container">
+
+  {% for item in Hero %}
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">{{ item.title }}</h1>
+      <p class="lead text-muted">{{ item.subtitle }}</p>
+      <p>
+        <a href="{{ item.buttonprimaryurl }}" class="btn btn-primary my-2">{{ item.buttonprimarytext }}</a>
+        <a href="{{ item.buttonsecondaryurl }}" class="btn btn-secondary my-2">{{ item.buttonsecondarytext }}</a>
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+
+  </section>
+
+
+    
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      {% for item in Highlight %}
+        <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{item.imageurl}}">
+          <h2 class="fw-normal">{{item.title}}</h2>
+          <p>{{item.subtitle}}</p>
+          <p><a class="btn btn-secondary" href="{{item.buttonurl}}">{{item.buttontext}} &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      {% endfor %}
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+      <section class="py-5 text-center container">
+        {% for item in Centeredsection %}
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light"> {{item.title}}           </h1>
+            <p class="lead text-muted">{{item.body}} </p>
+            <p>
+              <a href="{{item.buttonprimaryurl}}" class="btn btn-outline-primary my-2">{{item.buttonprimarytext}}</a>
+              <a href="{{item.buttonsecondaryurl}}" class="btn btn-outline-primary my-2">{{item.buttonsecondarytext}}</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+
+  {% for item in Newssection %}
+  <br>
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"> {{item.title_section1}}         <span class="text-muted">{{item.subtitle_section1}}</span></h2>
+        <p class="lead">{{item.body_section1}}</p>
+        <a href="{{item.buttonprimaryurl}}" class="btn btn-primary my-2">{{item.buttonprimarytext_section1}}</a>
+      </div>
+      <br>
+      <hr class="featurette-divider">
+
+      <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{{item.imageurl_section1}}">
+      </div>
+    </div>
+    <br>
+    <hr class="featurette-divider">
+    <br>
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">{{item.title_section2}}  <span class="text-muted">{{item.subtitle_section2}}</span></h2>
+        <p class="lead">{{item.body_section2}}   </p>
+        <a href="{{item.buttonprimaryurl_section2}}" class="btn btn-primary my-2">{{item.buttonprimarytext_section2}}</a>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{{item.imageurl_section2}}">
+      </div>
+    </div>
+    <br>
+    {% endfor%}
+
+    
+Last updated: DATE
+{% endblock %}
+

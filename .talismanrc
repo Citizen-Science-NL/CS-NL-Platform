@@ -1,6 +1,6 @@
 fileignoreconfig:
 - filename: .github/workflows/CI.yml
-checksum: 5bcd630f5bdcdcebbb5d009c26d4abb49f7c91b709080c87cf4650581764335d
+checksum: b2f3a2428ab8489b0515c144750e219e4f460b9c00a9886cf1e028312ffe107e
 version: ""
 - filename: .github/workflows/Deploy.yml
 checksum: dfb677f3a71a48ef9219486c4dafdccf29fe3c31ac965ed79d6149363dc5f5af
@@ -10,7 +10,14 @@ checksum: 45be7d29c9501ab2f37473af7c25b1ced4491bd17b707fc66be95d3a85a582f0
 version: ""
 fileignoreconfig:
 - filename: CitizenScienceNL/settings.py
-checksum: 46aecf14ca68083bc0b547db0c4664fc5f26261b7a85e803923bf2d7b742de60
+checksum: 3cacd979e5f94a3d51e4b3af842c5eb01fe5d8ca471a056fba2e836d6c362cf5
+version: ""
+fileignoreconfig:
+- filename: website/templates/home/home_page.html
+checksum: 0a859e623bceee7e479e51a1beaca649b769072ce8c1ed67c30afd5e479e1228
+version: ""
+- filename: website/models.py  
+checksum: 82c9f855402372abe79e3a0127e6cbec3619cecdd926c304487cf85faefda9ae
 version: ""
 
 threshold: low

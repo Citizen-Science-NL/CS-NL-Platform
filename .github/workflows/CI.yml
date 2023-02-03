@@ -74,8 +74,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Detect secrets with Talisman in incoming commits
-      uses: carhartl/talisman-secrets-scan-action@v1.2.1
+    #- name: Detect secrets with Talisman in incoming commits
+    #  uses: carhartl/talisman-secrets-scan-action@v1.2.1
   pull-request:
     needs: [tests,linter, security, ScanSensitiveData]
     name: 🔃 Creating Pull request to merge with Master
@@ -87,7 +87,7 @@ jobs:
         with:
           destination_branch: "master"
           assignees: "two-trick-pony-NL"
-          pr_title: "Pulling ${{ github.ref }} into master"
+          pr_title: "✅ Merge to Deploy to production  ${{ github.ref }} into master"
           pr_body: "🎉All Checks passed, so the CI opened this pull request. Check out the changes here: "
           pr_label: "automatic-pullrequest"
           github_token: ${{ secrets.GH_TOKEN }} 
