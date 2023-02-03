@@ -1,4 +1,5 @@
 Django>=4.1,<4.2
+mysqlclient==2.1.1
 environ==1.0
 django-environ
 gunicorn==20.1.0
