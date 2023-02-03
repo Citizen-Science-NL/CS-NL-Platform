@@ -2,45 +2,39 @@
 {% load static %}
 
 
-{% block body_class %}home_page{% endblock %}
-
 {% block content %}
 <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">TITEL</h1>
-        <p class="lead text-muted">INTRO</p>
-        <p>
-          <a href="/projects" class="btn btn-primary my-2">Zoek Projecten</a>
-          <a href="/organisations" class="btn btn-secondary my-2">Zoek organisaties</a>
-        </p>
-      </div>
+
+  {% for item in Hero %}
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">{{ item.title }}</h1>
+      <p class="lead text-muted">{{ item.subtitle }}</p>
+      <p>
+        <a href="{{ item.buttonprimaryurl }}" class="btn btn-primary my-2">{{ item.buttonprimarytext }}</a>
+        <a href="{{ item.buttonsecondaryurl }}" class="btn btn-secondary my-2">{{ item.buttonsecondarytext }}</a>
+      </p>
     </div>
+  </div>
+  {% endfor %}
+
   </section>
+
 
     
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
+
+      {% for item in Highlight %}
         <div class="col-lg-4">
-            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{item.imageurl}}">
   
-          <h2 class="fw-normal">TEXT</h2>
-          <p>TEXT</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          <h2 class="fw-normal">{{item.title}}</h2>
+          <p>{{item.subtitle}}</p>
+          <p><a class="btn btn-secondary" href="{{item.buttonurl}}">{{item.buttontext}} &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
-          <h2 class="fw-normal">TEXT</h2>
-          <p>TEXT</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
-          <h2 class="fw-normal">TEXT</h2>
-          <p>TEXT</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+      {% endfor %}
       </div><!-- /.row -->
 
       <hr class="featurette-divider">

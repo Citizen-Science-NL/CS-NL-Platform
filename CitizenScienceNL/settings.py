@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-wrc7exixbzd)-_@4@!f7#-j3p6*595ac^%n5=@9mce0$t#6oh^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1','citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
 
 
 # Application definition
