@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
-{% load wagtailcore_tags %}
+
 
 {% block body_class %}home_page{% endblock %}
 
@@ -9,8 +8,8 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">{{ page.title }}</h1>
-        <p class="lead text-muted">{{ page.intro }}</p>
+        <h1 class="fw-light">TITEL</h1>
+        <p class="lead text-muted">INTRO</p>
         <p>
           <a href="/projects" class="btn btn-primary my-2">Zoek Projecten</a>
           <a href="/organisations" class="btn btn-secondary my-2">Zoek organisaties</a>
@@ -26,20 +25,20 @@
         <div class="col-lg-4">
             <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
   
-          <h2 class="fw-normal">{{ page.headingoneheading }}</h2>
-          <p>{{ page.headingonetext }}</p>
+          <h2 class="fw-normal">TEXT</h2>
+          <p>TEXT</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
             <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
-          <h2 class="fw-normal">{{ page.headingtwoheading }}</h2>
-          <p>{{ page.headingtwotext }}</p>
+          <h2 class="fw-normal">TEXT</h2>
+          <p>TEXT</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{% static 'images/csnl-favicon.png' %}">
-          <h2 class="fw-normal">{{ page.headingthreeheading }}</h2>
-          <p>{{ page.headingthreetext }}</p>
+          <h2 class="fw-normal">TEXT</h2>
+          <p>TEXT</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -63,8 +62,8 @@
 
     <div class="row featurette">
       <div class="col-md-3">
-        <h2 class="featurette-heading fw-normal lh-1">{{ page.bodyheading}} <span class="text-muted"></span></h2>
-        <p class="lead">{{ page.bodytext|richtext }}</p>
+        <h2 class="featurette-heading fw-normal lh-1">TEXT <span class="text-muted"></span></h2>
+        <p class="lead">TEXT</p>
         <a href="/projects" class="btn btn-primary my-2">Zoek Projecten</a>
       </div>
       <div class="col-md-8">
@@ -98,6 +97,6 @@
     
 
     
-Last updated: {{ page.date }}
+Last updated: DATE
 {% endblock %}
 
