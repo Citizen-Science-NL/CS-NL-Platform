@@ -12,6 +12,10 @@ fileignoreconfig:
 - filename: CitizenScienceNL/settings.py
 checksum: 46aecf14ca68083bc0b547db0c4664fc5f26261b7a85e803923bf2d7b742de60
 version: ""
+fileignoreconfig:
+- filename: website/templates/home/home_page.html
+checksum: 0a859e623bceee7e479e51a1beaca649b769072ce8c1ed67c30afd5e479e1228
+version: ""
 
 threshold: low
 

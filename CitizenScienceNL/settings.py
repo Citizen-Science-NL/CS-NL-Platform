@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-wrc7exixbzd)-_@4@!f7#-j3p6*595ac^%n5=@9mce0$t#6oh^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'website',
 ]
 
 MIDDLEWARE = [
