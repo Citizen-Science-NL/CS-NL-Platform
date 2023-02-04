@@ -2,8 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# Create your models here.
-class Hero(models.Model):
+
+class Contents(models.Model):
+    title = models.CharField(max_length=250)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    class Meta:
+        abstract = True
+
+class Hero(Contents):
     title = models.TextField()
     subtitle = models.TextField()
     buttonprimarytext = models.CharField(max_length=255)
@@ -11,23 +18,8 @@ class Hero(models.Model):
     buttonsecondarytext = models.CharField(max_length=255)
     buttonsecondaryurl = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.title + ' | ' + self.author.username
-    
 
-class Highlight(models.Model):
-    title = models.TextField()
-    subtitle = models.TextField()
-    buttontext = models.CharField(max_length=255)
-    buttonurl = models.CharField(max_length=255)
-    imageurl = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.title + ' | ' + self.author.username
-    
-class Centeredsection(models.Model):
+class Centeredsection(Contents):
     title = models.CharField(max_length=255)
     body = models.TextField()
     buttonprimarytext = models.CharField(max_length=255)
@@ -35,12 +27,18 @@ class Centeredsection(models.Model):
     buttonsecondarytext = models.CharField(max_length=255)
     buttonsecondaryurl = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class OrganisationPage(Contents):
+    body = models.TextField()
+    title = models.CharField(max_length=250)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class ProjectPage(Contents):
+    body = models.TextField()
+    title = models.CharField(max_length=250)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return self.title + ' | ' + self.author.username
-    
-    
-class Newssection(models.Model):
+class Newssection(Contents):
     title_section1 = models.CharField(max_length=255)
     subtitle_section1 = models.CharField(max_length=255)
     body_section1 = models.TextField()
@@ -57,13 +55,15 @@ class Newssection(models.Model):
     
     def __str__(self):
         return self.title_section1 + ' | ' + self.author.username
-    
-class ProjectPage(models.Model):
-    body = models.TextField()
-    title = models.CharField(max_length=250)
+
+class Highlight(Contents):
+    title = models.TextField()
+    subtitle = models.TextField()
+    buttontext = models.CharField(max_length=255)
+    buttonurl = models.CharField(max_length=255)
+    imageurl = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
-class OrganisationPage(models.Model):
-    body = models.TextField()
-    title = models.CharField(max_length=250)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title + ' | ' + self.author.username
+    
