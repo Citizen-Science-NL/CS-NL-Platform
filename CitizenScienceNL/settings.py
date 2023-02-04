@@ -13,13 +13,13 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import environ
+from pathlib import Path
 
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
 
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,8 +36,7 @@ SECRET_KEY = 'django-insecure-wrc7exixbzd)-_@4@!f7#-j3p6*595ac^%n5=@9mce0$t#6oh^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
-
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
 
 # Application definition
 

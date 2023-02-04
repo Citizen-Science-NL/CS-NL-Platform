@@ -5,7 +5,11 @@
 {% block content %}
 <section class="py-5 text-center container">
 
+
   {% for item in Hero %}
+  {% if user.is_authenticated %}
+  <a href="{% url 'edithero' item.pk %}"> (edit)</a>
+  {% endif %}
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">{{ item.title }}</h1>
@@ -21,11 +25,12 @@
   </section>
 
 
-    
-
     <!-- Three columns of text below the carousel -->
     <div class="row">
       {% for item in Highlight %}
+      {% if user.is_authenticated %}
+      <a href="{% url 'edithighlight' item.pk %}"> (edit)</a>
+      {% endif %}
         <div class="col-lg-4">
             <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{item.imageurl}}">
           <h2 class="fw-normal">{{item.title}}</h2>
@@ -39,6 +44,9 @@
 
       <section class="py-5 text-center container">
         {% for item in Centeredsection %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'editcenteredsection' item.pk %}"> (edit)</a>
+        {% endif %}
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light"> {{item.title}}           </h1>
@@ -53,6 +61,9 @@
       </section>
 
   {% for item in Newssection %}
+  {% if user.is_authenticated %}
+  <a href="{% url 'editnewssection' item.pk %}"> (edit)</a>
+  {% endif %}
   <br>
     <div class="row featurette">
       <div class="col-md-7 order-md-2">

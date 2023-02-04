@@ -1,21 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView, TemplateView, View
+from django.views.generic import TemplateView, UpdateView
 from .models import Hero, Highlight, Centeredsection, Newssection, ProjectPage, OrganisationPage
 import requests
 
+#Queries the EU platform for dutch projects
 def get_data(kind):
         r = requests.get("https://eu-citizen.science/api/"+kind+"?country=NL")
         content = r.json()
         return content
-    
-
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-#def home(request):
- #   return render(request, 'home_page.html', {} )
 
 def organisations(request):
     return render(request, 'organisations_page.html', {} )
@@ -48,9 +41,37 @@ class ProjectView(TemplateView):
      
 class OrganisationView(TemplateView):
     template_name = 'organisations_page.html'
-    
+   
     def get_context_data(self, **kwargs):
          context = super(OrganisationView, self).get_context_data(**kwargs)
          context['organisation_page'] = OrganisationPage.objects.all()
          context['organisationlist'] = get_data('organisations')
          return context
+class UpdateHeroView(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = Hero 
+class UpdateHighlight(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = Highlight
+    
+class UpdateCenteredsection(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = Centeredsection
+    
+class UpdateNewssection(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = Newssection
+    
+class UpdateProjects(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = ProjectPage
+    
+class UpdateOrganisation(UpdateView):
+    template_name = 'update_section.html'
+    fields = "__all__"
+    model = OrganisationPage
