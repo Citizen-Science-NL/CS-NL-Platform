@@ -72,7 +72,7 @@ class ProjectPage(models.Model):
     title = models.CharField(max_length=250)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self): # new
-        return reverse('projects')
+        return reverse('home')
     
 class OrganisationPage(models.Model):
     body = models.TextField()
@@ -80,4 +80,4 @@ class OrganisationPage(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def get_absolute_url(self): # new
-        return reverse('organisations')
+        return reverse('home')
