@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Hero(models.Model):
     title = models.TextField()
@@ -14,6 +15,7 @@ class Hero(models.Model):
     def __str__(self):
         return self.title + ' | ' + self.author.username
     
+
 class Highlight(models.Model):
     title = models.TextField()
     subtitle = models.TextField()
