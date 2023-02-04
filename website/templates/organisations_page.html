@@ -5,6 +5,9 @@
 
 {% block content %}
 {% for item in organisation_page %}
+  {% if user.is_authenticated %}
+  <a href="{% url 'editprojects' item.pk %}"> (edit)</a>
+  {% endif %}
   <h1>{{ item.title }}</h1>
   <p> {{ item.body}} </p>
 
