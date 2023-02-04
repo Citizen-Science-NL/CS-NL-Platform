@@ -4,4 +4,4 @@ environ==1.0
 django-environ
 gunicorn==20.1.0
 setuptools==65.5.1
-requests==6.5.1
+requests==2.28.2
