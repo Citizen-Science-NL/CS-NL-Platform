@@ -28,10 +28,10 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       {% for item in Highlight %}
-      {% if user.is_authenticated %}
-      <a href="{% url 'edithighlight' item.pk %}"> (edit)</a>
-      {% endif %}
         <div class="col-lg-4">
+          {% if user.is_authenticated %}
+          <a href="{% url 'edithighlight' item.pk %}"> (edit)</a>
+          {% endif %}
             <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="{{item.imageurl}}">
           <h2 class="fw-normal">{{item.title}}</h2>
           <p>{{item.subtitle}}</p>
@@ -94,8 +94,5 @@
     </div>
     <br>
     {% endfor%}
-
-    
-Last updated: DATE
 {% endblock %}
 
