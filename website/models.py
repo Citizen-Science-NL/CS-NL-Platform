@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
 class Hero(models.Model):
     title = models.TextField()
-    subtitle = models.TextField()
+    #subtitle = models.TextField()
+    subtitle = RichTextField(blank=True, null=True)
     buttonprimarytext = models.CharField(max_length=255)
     buttonprimaryurl = models.CharField(max_length=255)
     buttonsecondarytext = models.CharField(max_length=255)
@@ -21,7 +23,7 @@ class Hero(models.Model):
     
 class Highlight(models.Model):
     title = models.TextField()
-    subtitle = models.TextField()
+    subtitle = subtitle = RichTextField(blank=True, null=True)
     buttontext = models.CharField(max_length=255)
     buttonurl = models.CharField(max_length=255)
     imageurl = models.CharField(max_length=255)
@@ -34,7 +36,7 @@ class Highlight(models.Model):
     
 class Centeredsection(models.Model):
     title = models.CharField(max_length=255)
-    body = models.TextField()
+    body = RichTextField(blank=True, null=True)
     buttonprimarytext = models.CharField(max_length=255)
     buttonprimaryurl = models.CharField(max_length=255)
     buttonsecondarytext = models.CharField(max_length=255)
@@ -50,13 +52,13 @@ class Centeredsection(models.Model):
 class Newssection(models.Model):
     title_section1 = models.CharField(max_length=255)
     subtitle_section1 = models.CharField(max_length=255)
-    body_section1 = models.TextField()
+    body_section1 = RichTextField(blank=True, null=True)
     buttonprimarytext_section1 = models.CharField(max_length=255)
     buttonprimaryurl_section1 = models.CharField(max_length=255)
     imageurl_section1 = models.CharField(max_length=255)
     title_section2 = models.CharField(max_length=255)
     subtitle_section2 = models.CharField(max_length=255)
-    body_section2 = models.TextField()
+    body_section2 = RichTextField(blank=True, null=True)
     buttonprimarytext_section2 = models.CharField(max_length=255)
     buttonprimaryurl_section2 = models.CharField(max_length=255)
     imageurl_section2 = models.CharField(max_length=255)
