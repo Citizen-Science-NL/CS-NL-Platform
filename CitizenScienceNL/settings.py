@@ -36,7 +36,10 @@ SECRET_KEY = 'django-insecure-wrc7exixbzd)-_@4@!f7#-j3p6*595ac^%n5=@9mce0$t#6oh^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1',
+                 '0.0.0.0',
+                 'citizen-science-nl.vdotvo9a4e2a6.eu-central-1.cs.amazonlightsail.com',
+                 'localhost']
 
 # Application definition
 
@@ -49,7 +52,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'ckeditor',
-    
 ]
 
 MIDDLEWARE = [
@@ -88,11 +90,11 @@ WSGI_APPLICATION = 'CitizenScienceNL.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': env('DATABASENAME'),  
-        'USER': env('DATABASEUSER'),  
-        'PASSWORD': env('DATABASEPASSWORD'),  
-        'HOST': env('DATABASEHOST'),  
-        'PORT': '3306',  
+        'NAME': env('DATABASENAME'),
+        'USER': env('DATABASEUSER'),
+        'PASSWORD': env('DATABASEPASSWORD'),
+        'HOST': env('DATABASEHOST'),
+        'PORT': '3306',
         'ENGINE': 'django.db.backends.mysql',
     }
 }
