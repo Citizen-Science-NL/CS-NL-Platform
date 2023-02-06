@@ -26,7 +26,7 @@ jobs:
         envkey_DATABASEPASSWORD: ${{ secrets.ENVKEY_DATABASEPASSWORD }}
         envkey_DATABASEUSER: ${{ secrets.ENVKEY_DATABASEUSER }}
         envkey_SECRETKEY: ${{ secrets.ENVKEY_DJANGO_SECRET }}
-        envkey_DEBUG: "False"
+        envkey_DEBUG: false
         file_name: .env
         fail_on_empty: false
     - name: ⚙️  Updating to the latest versions
@@ -87,7 +87,7 @@ jobs:
         with:
           destination_branch: "master"
           assignees: "two-trick-pony-NL"
-          pr_title: "✅ Merge to Deploy to production  ${{ github.ref }} into master"
+          pr_title: "🔄 Merge and Deploy to production | branch: ${{ github.ref }}  "
           pr_body: "🎉All Checks passed, so the CI opened this pull request. Check out the changes here: "
           pr_label: "automatic-pullrequest"
           github_token: ${{ secrets.GH_TOKEN }} 
